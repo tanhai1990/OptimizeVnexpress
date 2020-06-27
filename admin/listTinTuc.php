@@ -41,13 +41,17 @@ require "../lib/quantri.php";
         </div>
         <br>
         <br>
-        <h3>DANH SÁCH TIN TỨC</h3>  
+        <h3 style="text-align:center">DANH SÁCH TIN TỨC</h3>  
         <table>
             <tr>
-                <th style="width: 100px">idTin-Ngày</th>
-                <th style="width: 500px">Tiêu Đề - Hình Ảnh - Tóm Tắt</th>
-                <th style="width: 100px">Tên TL - Tên LT</th>
-                <th style="width: 200px">Số lần xem - Tin nổi bật - Ẩn Hiện</th>
+                <th style="width: 50px">idTin</th>
+                <th style="width: 100px">Ngay</th>
+                <th style="width: 350px">Tiêu Đề - Hình Ảnh - Tóm Tắt</th>
+                <th style="width: 100px">Tên TL</th>
+                <th style="width: 100px">Tên LT</th>
+                <th style="width: 60px">Số lần xem</th>
+                <th style="width: 60px">Tin nổi bật</th>
+                <th style="width: 80px">Ẩn hiện</th>
                 <th style="width: 100px"><a href="./themTinTuc.php">Thêm</a></th>
             </tr>
             <!-- Danh Sach tin tuc-->
@@ -56,19 +60,22 @@ require "../lib/quantri.php";
             while($rowTinTuc = mysqli_fetch_array($tinTuc)){
             ?>
             <tr>
-                <td><?php echo $rowTinTuc['idTin']?>-<?php echo $rowTinTuc['Ngay']?></td>
+                <td><?php echo $rowTinTuc['idTin']?></td>
+                <td><?php echo $rowTinTuc['Ngay']?></td>
                 <td>
                     <?php echo $rowTinTuc['TieuDe']?><br>
-                    <img style="width: 100px; height: 100px;" src="../upload/tintuc/<?php echo $rowTinTuc['urlHinh'];?>" alt=""/><br>
+                    <img style="width: 120px; height: 100px;" src="../upload/tintuc/<?php echo $rowTinTuc['urlHinh'];?>" alt=""/><br>
                     <?php echo $rowTinTuc['TomTat']?>
                 </td>
-                <td><?php echo $rowTinTuc['TenTL'];?>-<?php echo $rowTinTuc['Ten'];?></td>
-                <td>
-                    <?php echo $rowTinTuc['SoLanXem'];?><br>
-                    <?php echo $rowTinTuc['TinNoiBat'];?><br>
-                    <?php echo $rowTinTuc['AnHien'];?>
+                <td><?php echo $rowTinTuc['TenTL'];?></td>
+                <td><?php echo $rowTinTuc['Ten'];?></td>
+                <td style="text-align:center"><?php echo $rowTinTuc['SoLanXem'];?></td>
+                <td style="text-align:center"><?php echo $rowTinTuc['TinNoiBat'];?></td>
+                <td style="text-align:center"><?php echo $rowTinTuc['AnHien'];?></td>
+                <td style="text-align:center">
+                    <a href="./suaTinTuc.php?idTin=<?php echo $rowTinTuc['idTin']; ?>">Sửa</a> - 
+                    <a href="./xoaTinTuc.php?idTin=<?php echo $rowTinTuc['idTin']; ?>">Xóa</a>
                 </td>
-                <td><a href="./suaTinTuc.php">Sửa</a> - <a href="./xoaTinTuc.php">Xóa</a></td>
             </tr>
             <?php
             }

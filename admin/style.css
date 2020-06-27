@@ -1,0 +1,44 @@
+#Wrapper {
+  width: 1000px;
+  margin: auto;
+  background-color: #eeeeee;
+}
+
+#Wrapper #menu {
+  background-color: #afd1ec;
+}
+
+#Wrapper #menu #hangTieuDe {
+  text-align: center;
+  color: white;
+  padding: 3px;
+}
+
+#Wrapper #menu #hangHello {
+  text-align: right;
+}
+
+#Wrapper #menu #hangThuHai .subMenu {
+  background-color: yellow;
+  width: 200px;
+  float: left;
+  text-align: center;
+  height: 25px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#Wrapper #menu #hangThuHai .subMenu a:link {
+  color: blue;
+  text-decoration: none;
+}
+
+#Wrapper #menu #hangThuHai .subMenu a:visited {
+  color: blue;
+  text-decoration: none;
+}
+
+#Wrapper #menu #hangThuHai .subMenu a:hover {
+  background-color: red;
+}
+/*# sourceMappingURL=style.css.map */

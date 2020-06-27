@@ -1,0 +1,40 @@
+#Wrapper{
+    width: 1000px;
+    margin: auto;
+    background-color: #eeeeee;
+    #menu{
+        background-color: #afd1ec;
+        #hangTieuDe{
+            text-align: center;
+            color: white;
+            padding: 3px;
+        }
+        #hangHello{
+            text-align: right;
+        }
+        #hangThuHai{
+            .subMenu{
+                background-color: yellow;
+                width: 200px;
+                float: left;
+                text-align: center;
+                height: 25px;
+                font-size: 20px;
+                font-weight: bold;
+                a{
+                    &:link{
+                        color: blue;
+                        text-decoration: none;
+                    }
+                    &:visited{
+                        color: blue;
+                        text-decoration: none;
+                    }
+                    &:hover{
+                        background-color: red;
+                    }
+                }
+            }
+        }
+    }
+}

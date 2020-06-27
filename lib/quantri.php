@@ -49,6 +49,22 @@ function ChiTietLoaiTin($idLT){
 
 //End chi tiet loai tin
 
+//Quan tri Tin tuc
+function DanhSachTinTuc(){
+    global $Conn;
+    $sql = "
+        SELECT tin.*, TenTL, Ten 
+        FROM tin, loaitin, theloai
+        WHERE tin.idTL = theloai.idTL
+        AND tin.idLT = loaitin.idLT
+        ORDER BY idTin DESC
+        LIMIT 0,20
+    ";
+    $result = mysqli_query($Conn, $sql);
+    return $result;
+}
+//End quan tri Tin tuc
+
 function stripUnicode($str){
     if($str){
         $unicode = array(

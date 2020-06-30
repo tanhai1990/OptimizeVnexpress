@@ -61,7 +61,7 @@ Examples:
 
 ATTENTION: The trailing slash is required.
 */
-$baseUrl = '/tintuconline/upload/tintuc/';
+$baseUrl = '/OptimizeVnexpress/upload/tintuc/';
 
 /*
 $baseDir : the path to the local directory (in the server) which points to the
@@ -80,7 +80,7 @@ Examples:
 
 ATTENTION: The trailing slash is required.
 */
-$baseDir = "C://appserv/www/tintuconline/upload/tintuc/";
+$baseDir = "C://xampp/htdocs/OptimizeVnexpress/upload/tintuc/";
 
 /*
  * ### Advanced Settings

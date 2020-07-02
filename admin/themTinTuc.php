@@ -47,6 +47,19 @@ require "../lib/quantri.php";
         }
     </script>
 
+    <!-- insert Jquery -->
+    <script type="text/javascript" src="../jquery-slider-master/js/jquery-2.1.0.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#idTL").change(function(){
+            var id = $(this).val();
+            $.get("../loaiTin.php", {idTL:id}, function(data){
+                $("#idLT").html(data);
+            });
+        });
+    });
+    </script>
+    <!-- insert Jquery -->
     <style>
         table{
             width: 700px;
@@ -94,35 +107,35 @@ require "../lib/quantri.php";
                     <td>Content:</td>
                     <td><textarea name="txtTomTat" id="Content" cols="50" rows="4"></textarea></td>
                     <script type="text/javascript">
-                var editor = CKEDITOR.replace( 'Content',{
-                    uiColor : '#9AB8F3',
-                    language:'vi',
-                    skin:'v2',
-                    filebrowserImageBrowseUrl : 'ckfinder/ckfinder.html?Type=Images',
-                    filebrowserFlashBrowseUrl : 'ckfinder/ckfinder.html?Type=Flash',
-                    filebrowserImageUploadUrl : 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                    filebrowserFlashUploadUrl : 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
-                    toolbar:[
-                    ['Source','-','Save','NewPage','Preview','-','Templates'],
-                    ['Cut','Copy','Paste','PasteText','PasteFromWord','-','Print'],
-                    ['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
-                    ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField'],
-                    ['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
-                    ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'],
-                    ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
-                    ['Link','Unlink','Anchor'],
-                    ['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak'],
-                    ['Styles','Format','Font','FontSize'],
-                    ['TextColor','BGColor'],
-                    ['Maximize', 'ShowBlocks','-','About']
-                    ]
-                });		
-</script>
+                    var editor = CKEDITOR.replace( 'Content',{
+                        uiColor : '#9AB8F3',
+                        language:'vi',
+                        skin:'v2',
+                        filebrowserImageBrowseUrl : 'ckfinder/ckfinder.html?Type=Images',
+                        filebrowserFlashBrowseUrl : 'ckfinder/ckfinder.html?Type=Flash',
+                        filebrowserImageUploadUrl : 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                        filebrowserFlashUploadUrl : 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+                        toolbar:[
+                        ['Source','-','Save','NewPage','Preview','-','Templates'],
+                        ['Cut','Copy','Paste','PasteText','PasteFromWord','-','Print'],
+                        ['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
+                        ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField'],
+                        ['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
+                        ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'],
+                        ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+                        ['Link','Unlink','Anchor'],
+                        ['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak'],
+                        ['Styles','Format','Font','FontSize'],
+                        ['TextColor','BGColor'],
+                        ['Maximize', 'ShowBlocks','-','About']
+                        ]
+                    });		
+                    </script>
                 </tr>
                 <tr>
                     <td>Mã thể loại:</td>
                     <td>
-                        <select name="CmbIdTL" id="">
+                        <select name="CmbIdTL" id="idTL">
                             <!-- Danh sach the loai -->
                             <?php
                             $theLoai = ListTheLoai();
@@ -139,7 +152,7 @@ require "../lib/quantri.php";
                 <tr>
                     <td>Mã loại tin:</td>
                     <td>
-                        <select name="CmbIdLT" id="">
+                        <select name="CmbIdLT" id="idLT">
                             <!-- Danh sach loai tin-->
                             <?php
                             $loaiTin = DanhSachLoaiTin();

@@ -1,0 +1,16 @@
+Main Hosting Details
+Control panel username: b10_26206327
+Control panel password	**********
+Control panel URL: cpanel.byethost10.com
+database name: b10_26206327_vnexpress
+MySQL username: b10_26206327
+MySQL password: **********
+MySQL hostname: sql305.byethost10.com
+FTP username: b10_26206327
+FTP password: **********
+FTP host name:	ftp.byethost10.com
+
+
+Your Website URL's
+Home page
+http://tanhaitraining.byethost10.com

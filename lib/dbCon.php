@@ -1,8 +1,13 @@
 <?php
-$serverName = "localhost";
+/*$serverName = "localhost";
 $userName = "root";
 $passWord = "";
-$dbName = "vnexpress";
+$dbName = "vnexpress";*/
+
+$serverName = "sql305.byethost10.com";
+$userName = "b10_26206327";
+$passWord = "**********";
+$dbName = "b10_26206327_vnexpress";
 
 
 $Conn = mysqli_connect($serverName, $userName, $passWord, $dbName);
